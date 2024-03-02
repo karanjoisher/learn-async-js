@@ -45,9 +45,9 @@ const server = http.createServer((req, res) => {
                 return incident.id === `MABOS00${id}`
             })));
         }
-        else {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
-            res.end('Endpoint not found');
+        else{
+            res.writeHead(400, { 'Content-Type': 'text/plain' });
+            res.end('Missing parameters');
         }
     } else {
         // If the request is for an unsupported endpoint, send a not found response
